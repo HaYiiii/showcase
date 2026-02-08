@@ -1,0 +1,99 @@
+/* Cấu hình theme cho Tailwind v4 */
+@theme {
+  /* Container configuration */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1240px;
+  --container-2xl: 1240px;
+
+  /* Custom colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Custom border radius */
+  --radius-xl: calc(var(--radius) - 4px);
+  --radius-2xl: var(--radius);
+
+  /* Custom box shadows */
+  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.06);
+
+  /* Custom fonts */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular;
+}
+
+/* Phần @layer hiện tại của bạn giữ nguyên */
+@layer base {
+  :root {
+    /* Core */
+    --background: #ffffff;
+    --foreground: #171717;
+
+    /* Surfaces */
+    --card: #ffffff;
+    --card-foreground: #171717;
+
+    /* Muted */
+    --muted: #f4f4f5;
+    --muted-foreground: rgba(24, 24, 27, 0.64);
+
+    /* Borders / Inputs */
+    --border: rgba(24, 24, 27, 0.12);
+    --input: rgba(24, 24, 27, 0.14);
+
+    /* Brand */
+    --primary: #2563eb;
+    --primary-foreground: #ffffff;
+
+    /* Focus ring */
+    --ring: rgba(37, 99, 235, 0.35);
+
+    /* Destructive */
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    /* Radius */
+    --radius: 16px;
+  }
+
+  .dark {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --card: #111113;
+    --card-foreground: #ededed;
+
+    --muted: #18181b;
+    --muted-foreground: rgba(237, 237, 237, 0.7);
+
+    --border: rgba(244, 244, 245, 0.14);
+    --input: rgba(244, 244, 245, 0.16);
+
+    --primary: #3b82f6;
+    --primary-foreground: #0b1220;
+
+    --ring: rgba(59, 130, 246, 0.4);
+
+    --destructive: #f87171;
+    --destructive-foreground: #0b1220;
+  }
+}
+
+@layer utilities {
+  .container {
+    margin-inline: auto;
+  }
+}
