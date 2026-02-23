@@ -1,4 +1,9 @@
-/* Cấu hình theme cho Tailwind v4 */
+/* Tailwind v4 */
+@import "tailwindcss";
+
+/* =========================
+   Tailwind v4 Theme Tokens
+   ========================= */
 @theme {
   /* Container configuration */
   --container-sm: 640px;
@@ -7,7 +12,7 @@
   --container-xl: 1240px;
   --container-2xl: 1240px;
 
-  /* Custom colors */
+  /* Existing system colors (keep) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -22,76 +27,146 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
+  /* ✅ Portfolio/Home tokens -> expose to Tailwind */
+  --color-app: var(--bg);         /* bg-app */
+  --color-ink: var(--ink);        /* text-ink */
+  --color-accent: var(--accent);  /* text-accent bg-accent */
+  --color-ui: rgb(var(--ui));     /* bg-ui/60 */
+  --color-glass: rgb(var(--glass-border)); /* border-glass/50 */
+
   /* Custom border radius */
   --radius-xl: calc(var(--radius) - 4px);
   --radius-2xl: var(--radius);
 
-  /* Custom box shadows */
+  /* Custom box shadows (keep + add glass) */
   --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.05);
   --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.06);
+  --shadow-glass: var(--glass-shadow);
 
   /* Custom fonts */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular;
 }
 
-/* Phần @layer hiện tại của bạn giữ nguyên */
+/* =========================
+   Base Tokens
+   ========================= */
 @layer base {
   :root {
+    /* =========================
+       Home UI (Portfolio) tokens
+       Default: Palette A (Mint Pop)
+       ========================= */
+    --bg: #eef2f1;
+    --ink: #1b1b1b;
+
+    /* Accent will be changed by your ThemeProvider runtime */
+    --accent: #77abb6;
+    --accent-ink: #1b1b1b;
+
+    /* Glass */
+    --ui: 255 255 255;
+    --glass-border: 255 255 255;
+    --glass-shadow: 0 18px 60px rgba(0, 0, 0, 0.10);
+
+    /* =========================
+       Existing system tokens (shadcn-like)
+       ✅ Map them to home tokens so whole app matches UI
+       ========================= */
+
     /* Core */
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: var(--bg);
+    --foreground: var(--ink);
 
     /* Surfaces */
-    --card: #ffffff;
-    --card-foreground: #171717;
+    --card: rgba(255, 255, 255, 0.72);
+    --card-foreground: var(--ink);
 
     /* Muted */
-    --muted: #f4f4f5;
-    --muted-foreground: rgba(24, 24, 27, 0.64);
+    --muted: rgba(255, 255, 255, 0.55);
+    --muted-foreground: color-mix(in oklab, var(--ink) 70%, transparent);
 
     /* Borders / Inputs */
-    --border: rgba(24, 24, 27, 0.12);
-    --input: rgba(24, 24, 27, 0.14);
+    --border: rgba(255, 255, 255, 0.50);
+    --input: rgba(255, 255, 255, 0.65);
 
     /* Brand */
-    --primary: #2563eb;
-    --primary-foreground: #ffffff;
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-ink);
 
     /* Focus ring */
-    --ring: rgba(37, 99, 235, 0.35);
+    --ring: color-mix(in oklab, var(--accent) 40%, transparent);
 
     /* Destructive */
     --destructive: #ef4444;
     --destructive-foreground: #ffffff;
 
     /* Radius */
-    --radius: 16px;
+    --radius: 28px;
   }
 
+  /* Keep dark mode structure (optional) */
   .dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #0a0a0a;
+    --ink: #ededed;
 
-    --card: #111113;
-    --card-foreground: #ededed;
+    --accent: #9cbbfc;
+    --accent-ink: #0b1220;
 
-    --muted: #18181b;
-    --muted-foreground: rgba(237, 237, 237, 0.7);
+    --ui: 17 17 19;
+    --glass-border: 244 244 245;
+    --glass-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+
+    --background: var(--bg);
+    --foreground: var(--ink);
+
+    --card: rgba(17, 17, 19, 0.72);
+    --card-foreground: var(--ink);
+
+    --muted: rgba(255, 255, 255, 0.06);
+    --muted-foreground: color-mix(in oklab, var(--ink) 70%, transparent);
 
     --border: rgba(244, 244, 245, 0.14);
     --input: rgba(244, 244, 245, 0.16);
 
-    --primary: #3b82f6;
-    --primary-foreground: #0b1220;
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-ink);
 
-    --ring: rgba(59, 130, 246, 0.4);
+    --ring: color-mix(in oklab, var(--accent) 50%, transparent);
 
     --destructive: #f87171;
     --destructive-foreground: #0b1220;
+
+    --radius: 28px;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
   }
 }
 
+/* =========================
+   Components helpers
+   ========================= */
+@layer components {
+  /* Reusable glass class like your Home UI */
+  .glass {
+    @apply rounded-2xl border backdrop-blur-xl;
+    background: rgb(var(--ui) / 0.6);
+    border-color: rgb(var(--glass-border) / 0.5);
+    box-shadow: var(--glass-shadow);
+  }
+}
+
+/* =========================
+   Utilities
+   ========================= */
 @layer utilities {
   .container {
     margin-inline: auto;
