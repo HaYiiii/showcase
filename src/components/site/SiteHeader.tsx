@@ -68,7 +68,7 @@ export function SiteHeader() {
           </div>
           <div className="text-left leading-tight">
             <div className="text-sm font-semibold">Ha Nguyen</div>
-            <div className="text-xs text-muted-foreground">UI/UX Craft</div>
+            <div className="text-xs text-muted-foreground">Frontend Developer</div>
           </div>
         </button>
 
