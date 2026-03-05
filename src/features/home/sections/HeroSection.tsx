@@ -3,6 +3,7 @@
 import { ActionButton } from "@/components/blocks/ActionButton";
 import { PillBadge } from "@/components/blocks/PillBadge";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { PERSONAL_INFO } from "../data/info";
 // nếu chưa có GlassCard thì dùng div className="glass"
 
 function Doodle() {
@@ -52,21 +53,22 @@ export function HeroSection() {
         />
         <div className="relative">
           <div className="flex flex-wrap items-center gap-2">
-            <PillBadge>UX thinking</PillBadge>
+            <PillBadge>Frontend engineering</PillBadge>
             <PillBadge>UI systems</PillBadge>
-            <PillBadge tone="accent">fast interactions</PillBadge>
+            <PillBadge tone="accent">UX thinking</PillBadge>
           </div>
 
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-            I build clean UI, <span className="text-accent">thoughtful UX</span>
-            , and
-            <br className="hidden md:block" /> scalable components.
+            Hi, <span className="text-accent">I&apos;m Ha Nguyen</span>
           </h1>
 
           <p className="mt-3 max-w-xl text-[14px] leading-6 text-foreground/75">
-            Recruiters don’t just read — they can click, explore, and feel how I
-            design flows. I care about hierarchy, micro-interactions, and
-            reliable UX states.
+            I&apos;m a Frontend Developer with 3 years of experience building
+            web applications, with hands-on experience in mobile development.
+            Strong in developing responsive, user-centered interfaces with a
+            focus on UI/UX optimization. Experienced in feature analysis,
+            cross-functional collaboration, and delivering high-quality user
+            experiences.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -84,14 +86,14 @@ export function HeroSection() {
           </div>
 
           <div className="mt-7 flex items-center justify-between gap-4 rounded-2xl bg-ui/55 p-4">
-            <div>
+            {/* <div>
               <div className="text-[12px] font-bold text-foreground/70">
                 Signature
               </div>
               <div className="mt-2">
                 <Doodle />
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-2">
               <ActionButton
@@ -100,7 +102,7 @@ export function HeroSection() {
                 asChild
                 aria-label="GitHub"
               >
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer">
                   <Github className="h-4 w-4" />
                   <span className="hidden sm:inline">GitHub</span>
                 </a>
@@ -111,7 +113,11 @@ export function HeroSection() {
                 asChild
                 aria-label="LinkedIn"
               >
-                <a href="#" target="_blank" rel="noreferrer">
+                <a
+                  href={PERSONAL_INFO.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Linkedin className="h-4 w-4" />
                   <span className="hidden sm:inline">LinkedIn</span>
                 </a>
@@ -125,27 +131,27 @@ export function HeroSection() {
       <div className="grid gap-4 lg:col-span-5">
         <div className="glass p-6">
           <div className="text-[12px] font-bold tracking-widest text-foreground/70">
-            ABOUT
+            ABOUT THIS SHOWCASE
           </div>
           <div className="mt-2 text-[18px] font-extrabold text-foreground">
             Not a dashboard — a story
           </div>
           <div className="mt-1 text-[13px] text-foreground/70">
-            I’m Ha. I love clean spacing, readable hierarchy, and interactions
-            that feel calm.
+            This space collects some of my projects, UI explorations, and the
+            thinking behind how I design and build products.
           </div>
 
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            <div className="rounded-2xl bg-ui/65 p-3 text-[12px] font-semibold text-foreground/80">
+            <div className="rounded-2xl bg-ui p-3 text-[12px] font-semibold text-foreground/80">
               Dashboard-first UI
             </div>
-            <div className="rounded-2xl bg-ui/65 p-3 text-[12px] font-semibold text-foreground/80">
+            <div className="rounded-2xl bg-ui p-3 text-[12px] font-semibold text-foreground/80">
               Role-based UX
             </div>
-            <div className="rounded-2xl bg-ui/65 p-3 text-[12px] font-semibold text-foreground/80">
+            <div className="rounded-2xl bg-ui p-3 text-[12px] font-semibold text-foreground/80">
               Fast interactions
             </div>
-            <div className="rounded-2xl bg-ui/65 p-3 text-[12px] font-semibold text-foreground/80">
+            <div className="rounded-2xl bg-ui p-3 text-[12px] font-semibold text-foreground/80">
               Clear UX writing
             </div>
           </div>

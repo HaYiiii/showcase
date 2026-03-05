@@ -38,7 +38,7 @@ export function ProjectsSection() {
           ][idx % 3];
 
           return (
-            <div key={p.key} className="glass group relative overflow-hidden p-6 lg:col-span-4">
+            <div key={p.key} className="glass group relative overflow-hidden p-6 lg:col-span-4 pb-18">
               <div
                 className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-[38px] opacity-60 transition group-hover:opacity-80"
                 style={{ background: `linear-gradient(135deg, ${localAccent}, transparent)` }}
@@ -65,7 +65,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="fixed bottom-6 left-6 mt-5 flex flex-wrap gap-2">
                   {p.links.map((l) => (
                     <ActionButton key={`${p.key}-${l.href}`} asChild variant={l.variant ?? "solid"}>
                       <a href={l.href}>{l.label}</a>

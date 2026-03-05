@@ -1,9 +1,9 @@
 "use client";
 
-import * as React from "react";
-import { GraduationCap } from "lucide-react";
-import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { ActionButton } from "@/components/blocks/ActionButton";
+import { SectionTitle } from "@/components/blocks/SectionTitle";
+import { GraduationCap } from "lucide-react";
+import { PERSONAL_INFO } from "../data/info";
 
 export function ContactSection() {
   return (
@@ -23,7 +23,9 @@ export function ContactSection() {
             </div>
 
             <div>
-              <div className="text-[12px] font-bold text-foreground/70">EDUCATION</div>
+              <div className="text-[12px] font-bold text-foreground/70">
+                EDUCATION
+              </div>
               <div className="mt-2 text-[16px] font-extrabold text-foreground">
                 University of Information Technology (UIT)
               </div>
@@ -32,7 +34,8 @@ export function ContactSection() {
               </div>
 
               <div className="mt-4 rounded-2xl bg-ui/55 p-4 text-[13px] text-foreground/70">
-                This page is meant to feel personal. We’ll swap in content from your CV (projects, links, highlights).
+                This page is meant to feel personal. We’ll swap in content from
+                your CV (projects, links, highlights).
               </div>
             </div>
           </div>
@@ -40,7 +43,9 @@ export function ContactSection() {
 
         {/* Message box */}
         <div className="glass p-6 lg:col-span-5">
-          <div className="text-[12px] font-bold text-foreground/70">MESSAGE</div>
+          <div className="text-[12px] font-bold text-foreground/70">
+            MESSAGE
+          </div>
           <div className="mt-2 text-xl font-extrabold tracking-tight text-foreground">
             Want to hire a calm UI builder?
           </div>
@@ -49,9 +54,19 @@ export function ContactSection() {
           </p>
 
           <div className="mt-5 grid gap-2">
-            <ActionButton variant="solid">Email me</ActionButton>
-            <ActionButton variant="soft">LinkedIn</ActionButton>
-            <ActionButton variant="ghost">GitHub</ActionButton>
+            <ActionButton variant="solid" asChild>
+              <a href={`mailto:${PERSONAL_INFO.email}`}>Email me</a>
+            </ActionButton>
+            <ActionButton variant="soft" asChild>
+              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </ActionButton>
+            <ActionButton variant="ghost" asChild>
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </ActionButton>
           </div>
         </div>
       </div>

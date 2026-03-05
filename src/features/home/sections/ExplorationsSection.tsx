@@ -8,7 +8,7 @@ import { ActionButton } from "@/components/blocks/ActionButton";
 
 export function ExplorationsSection() {
   return (
-    <section className="mt-12">
+    <section id="explore" className="mt-12">
       <SectionTitle
         kicker="DESIGN EXPLORATIONS"
         title="Reusable UI Systems & Architecture"

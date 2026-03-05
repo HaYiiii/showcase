@@ -8,32 +8,32 @@ export type SkillGroup = {
 
 export const SKILLS: SkillGroup[] = [
   {
-    title: "Frontend craft",
+    title: "Frontend engineering",
     items: [
       "React / Next.js (App Router)",
       "TypeScript, clean component APIs",
-      "Design tokens + consistent spacing",
-      "State: Redux / Zustand / Context",
+      "Reusable UI components and custom hooks",
+      "State management (Redux / Zustand / Context)",
     ],
     icon: "sparkles",
   },
   {
     title: "UX thinking",
     items: [
-      "Enterprise flows, role-based UX",
-      "Interaction states & error handling",
-      "A11y basics (labels, keyboard, focus)",
-      "Micro-interactions that feel fast",
+      "Enterprise dashboards and complex workflows",
+      "Form UX, validation, and interaction state",
+      "Accessible UI (labels, focus, keyboard support)",
+      "Micro-interactions and responsive interfaces",
     ],
     icon: "zap",
   },
   {
-    title: "Delivery",
+    title: "Product delivery",
     items: [
       "GraphQL / REST integration",
-      "Performance awareness",
-      "SEO + analytics when needed",
-      "Maintainable structure (hooks, modules)",
+      "Performance and UX optimization",
+      "SEO and analytics integration",
+      "Maintainable frontend structure (modules, hooks)",
     ],
     icon: "check",
   },

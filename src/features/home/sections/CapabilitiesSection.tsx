@@ -5,7 +5,7 @@ import { SKILLS, SKILL_ICONS } from "../data/skills";
 
 export function CapabilitiesSection() {
   return (
-    <section className="mt-12">
+    <section id="capabilities" className="mt-12">
       <SectionTitle
         kicker="CAPABILITIES"
         title="What I’m strong at"
