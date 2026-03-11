@@ -10,8 +10,8 @@ export function ContactSection() {
     <section id="contact" className="mt-10 scroll-mt-24">
       <SectionTitle
         kicker="CONTACT"
-        title="Let’s talk"
-        desc="Keep it simple and friendly. Replace placeholders with your real email + links later."
+        title="Let's connect"
+        desc="If you'd like to discuss a project, collaboration, or just say hello, feel free to reach out."
       />
 
       <div className="mt-5 grid gap-4 lg:grid-cols-12">
@@ -32,11 +32,6 @@ export function ContactSection() {
               <div className="mt-1 text-[13px] text-foreground/70">
                 Computer Science • 2018–2022 • GPA 7.59/10
               </div>
-
-              <div className="mt-4 rounded-2xl bg-ui/55 p-4 text-[13px] text-foreground/70">
-                This page is meant to feel personal. We’ll swap in content from
-                your CV (projects, links, highlights).
-              </div>
             </div>
           </div>
         </div>
@@ -46,14 +41,7 @@ export function ContactSection() {
           <div className="text-[12px] font-bold text-foreground/70">
             MESSAGE
           </div>
-          <div className="mt-2 text-xl font-extrabold tracking-tight text-foreground">
-            Want to hire a calm UI builder?
-          </div>
-          <p className="mt-2 text-[13px] text-foreground/70">
-            I’m happy to share details and walk through real cases.
-          </p>
-
-          <div className="mt-5 grid gap-2">
+          <div className="mt-5 grid md:grid-cols-3 gap-2">
             <ActionButton variant="solid" asChild>
               <a href={`mailto:${PERSONAL_INFO.email}`}>Email me</a>
             </ActionButton>
@@ -69,11 +57,6 @@ export function ContactSection() {
             </ActionButton>
           </div>
         </div>
-      </div>
-
-      <div className="pb-10 pt-8 text-center text-[12px] text-foreground/60">
-        Portfolio Preview • Palette:{" "}
-        <span className="font-bold text-accent">dynamic</span>
       </div>
     </section>
   );

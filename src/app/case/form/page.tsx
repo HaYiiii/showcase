@@ -1,12 +1,8 @@
 "use client";
 
-import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -15,8 +11,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { CheckCircle2, AlertTriangle, Info, Loader2 } from "lucide-react";
+import { AlertTriangle, ArrowLeft, CheckCircle2, Info, Loader2 } from "lucide-react";
+import Link from "next/link";
+import * as React from "react";
 
 type FormValues = {
   fullName: string;
@@ -140,15 +141,22 @@ export default function FormCasePage() {
       {/* Page header */}
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
+          <div className="mb-3 flex items-center content-center gap-3">
+            <Button asChild variant="outline" className="rounded-xl">
+              <Link href="/">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back
+              </Link>
+            </Button>
+            <h1 className="text-3xl font-extrabold tracking-tight">
+              Form Case — Complex Form UX
+            </h1>
+          </div>
           <div className="flex items-center gap-2">
             <Badge className="rounded-full bg-muted text-foreground">Form UX</Badge>
             <Badge className="rounded-full bg-primary/10 text-primary">Validation</Badge>
             <Badge className="rounded-full bg-muted text-foreground">Safe actions</Badge>
           </div>
-
-          <h1 className="mt-3 text-3xl font-extrabold tracking-tight">
-            Form Case — Complex Form UX
-          </h1>
           <p className="mt-2 max-w-2xl text-[14px] text-muted-foreground">
             Enterprise-style form: section layout, inline errors, summary,
             safe submit/cancel, and clear feedback states.
@@ -194,15 +202,15 @@ export default function FormCasePage() {
                   {submitState === "success"
                     ? "Saved successfully"
                     : submitState === "error"
-                    ? "Please fix the highlighted fields"
-                    : "Tip: Use error summary for fast scanning"}
+                      ? "Please fix the highlighted fields"
+                      : "Tip: Use error summary for fast scanning"}
                 </div>
                 <div className="text-[12px] text-muted-foreground">
                   {submitState === "success"
                     ? "This is a demo feedback state. In real apps, show a toast + refresh list."
                     : submitState === "error"
-                    ? "Good forms reduce friction: clear messages, predictable actions, and safe defaults."
-                    : "Try submitting with missing fields to see summary + inline errors."}
+                      ? "Good forms reduce friction: clear messages, predictable actions, and safe defaults."
+                      : "Try submitting with missing fields to see summary + inline errors."}
                 </div>
               </div>
             </div>

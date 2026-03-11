@@ -81,7 +81,7 @@ export function HeroSection() {
               <a href="#contact">Say hi</a>
             </ActionButton>
             <ActionButton asChild variant="ghost">
-              <a href="#">Download CV</a>
+              <a href="/ha-nguyen-cv.pdf" download>Download CV</a>
             </ActionButton>
           </div>
 
