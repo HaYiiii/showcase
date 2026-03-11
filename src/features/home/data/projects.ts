@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   {
     key: "workbee",
     name: "WorkBee",
-    tagline: "BSC / OKR platform with real enterprise UX",
+    tagline: "A lean management platform based on the BSC model, helping businesses streamline operations, foster human development, and drive innovation for sustainable growth.",
     role: "Frontend Engineer (core product)",
     impact: [
       "Built reusable UI components and shared patterns across modules",
@@ -33,19 +33,12 @@ export const PROJECTS: Project[] = [
       "Ant Design",
       "Tailwind",
     ],
-    links: [
-      {
-        label: "Open Dashboard Case",
-        href: "/case/dashboard",
-        variant: "solid",
-      },
-      { label: "UI/UX Principles", href: "/principles", variant: "soft" },
-    ],
+    links: [],
   },
   {
     key: "site",
     name: "TGL Homepage",
-    tagline: "Company website with CMS and SEO optimization",
+    tagline: "The company's official website introduces the company, showcases services and projects, and enhances brand presence.",
     role: "Frontend Engineer (web)",
     impact: [
       "CMS pages with maintainable content structure",
@@ -53,15 +46,12 @@ export const PROJECTS: Project[] = [
       "Improved SEO structure and search visibility",
     ],
     tech: ["Next.js", "Tailwind", "SCSS", "GA4"],
-    links: [
-      { label: "Back to Home", href: "/", variant: "soft" },
-      { label: "See Case Studies", href: "#projects", variant: "ghost" },
-    ],
+    links: [],
   },
   {
     key: "forms",
     name: "Inspection Cloud",
-    tagline: "Smart inspection system for field reporting",
+    tagline: "A cloud-based web and mobile inspection system for on-site inspections, automated reporting, and centralized project management.",
     role: "Frontend Engineer (web + mobile)",
     impact: [
       "Improved UX for web and mobile inspection workflows",
@@ -76,9 +66,6 @@ export const PROJECTS: Project[] = [
       "Redux",
       "React Hook Form",
     ],
-    links: [
-      { label: "Open Form Case", href: "/case/form", variant: "solid" },
-      { label: "Contact", href: "#contact", variant: "ghost" },
-    ],
+    links: [],
   },
 ];

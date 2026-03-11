@@ -25,8 +25,9 @@ export function ProjectsSection() {
     <section id="projects" className="scroll-mt-24">
       <SectionTitle
         kicker="CASE STUDIES"
-        title="Projects that show how I think"
-        desc="The goal is to feel my UI taste — not just read it. Each card is a doorway to an interactive case."
+        title="Projects I've worked on"
+        desc="Each card represents a real project I've contributed to,
+including my role, key features, and impact."
       />
 
       <div className="mt-5 grid gap-4 lg:grid-cols-12">
@@ -38,7 +39,7 @@ export function ProjectsSection() {
           ][idx % 3];
 
           return (
-            <div key={p.key} className="glass group relative overflow-hidden p-6 lg:col-span-4 pb-18">
+            <div key={p.key} className="glass group relative overflow-hidden p-6 lg:col-span-4">
               <div
                 className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-[38px] opacity-60 transition group-hover:opacity-80"
                 style={{ background: `linear-gradient(135deg, ${localAccent}, transparent)` }}
